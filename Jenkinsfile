@@ -6,8 +6,8 @@ pipeline {
 
     environment {
         // Поміняйте APP_NAME та DOCKER_IMAGE_NAME на ваше імʼя та прізвище, відповідно.
-        APP_NAME = 'Oleksandra'
-        DOCKER_IMAGE_NAME = 'Tkachenko'
+        APP_NAME = 'oleksandra'
+        DOCKER_IMAGE_NAME = 'tkachenko'
         // Необхідно для роботи в плейграунді
         GOCACHE="/home/jenkins/.cache/go-build/"
     }
