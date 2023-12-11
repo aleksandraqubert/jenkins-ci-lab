@@ -16,7 +16,7 @@ stages {
     stage('Clone Repository') {
         steps {
             // Крок клонування репозиторію
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/aleksandraqubert/jenkins-ci-lab.git']]])
+            checkout scm
         }
     }
     // Додаткові етапи ...
