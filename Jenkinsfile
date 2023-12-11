@@ -68,9 +68,9 @@ stages {
                         // Створення TAR-архіву артефакту з використанням імені додатку APP_NAME та номеру сборки BUILD_NUMBER
                         // TODO: ваш код
                          script {
-                            sh "tar -czf ${APP_NAME}.tar.gz ${APP_NAME}"
+                            sh "tar -czf ${APP_NAME}-${BUILD_NUMBER}.tar.gz ${APP_NAME}"
                         }
-                        archiveArtifacts artifacts: "${APP_NAME}.tar.gz", fingerprint: true
+                       
                     }
                 }
 
@@ -92,6 +92,7 @@ stages {
         success {
             // Архівація успішна, артефакт готовий для використання та збереження
             // TODO: ваш код
+            archiveArtifacts artifacts: "${APP_NAME}-${BUILD_NUMBER}.tar.gz", onlyIfSuccessful: true
             echo "Pipeline finished successfully"
         }
         always {
